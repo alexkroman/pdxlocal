@@ -1,0 +1,9 @@
+%div.item 
+  %a{:href => @item.url} #{@item.title}
+  %br
+  .byline 
+    #{time_ago_in_words @item.published_at} ago from <b>#{@item.source}</b> &middot; #{@item.votes.size} voted
+    - unless @votes.include?(@item.id)
+      &middot; <a href="/like/#{@item.id}">Vote</a>
+#comment
+  <div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/pdxlocal/embed.js"></script><noscript><a href="http://disqus.com/forums/pdxlocal/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>

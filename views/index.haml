@@ -1,0 +1,11 @@
+#items
+  - @items.each do |item|
+    %div.item 
+      %a{:href => item.url} #{item.title}
+      %br
+      .byline 
+        #{time_ago_in_words item.published_at} ago from <b>#{item.source}</b> &middot;
+        #{item.vote_count} voted
+        - unless @votes.include?(item.id)
+          &middot; <a href="/like/#{item.id}">Vote</a>
+        &middot; <a href="/comments/#{item.id}#disqus_thread">Comments</a>

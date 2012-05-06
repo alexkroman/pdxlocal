@@ -1,0 +1,38 @@
+!!!
+%html
+  %head
+    %title pdxlocal
+    %link{:rel => "stylesheet", :href => "/screen.css", :type => "text/css", :media => "screen,projection"}
+    %link{:rel => "stylesheet", :href => "/print.css", :type => "text/css", :media => "print"}
+    <!--[if lt IE 8]><link rel="stylesheet" href="/ie.css" type="text/css" media="screen, projection"><![endif]-->
+    %link{:rel => "stylesheet", :href => "/style.css", :type => "text/css", :media => "all"}  
+    %meta{'http-equiv' => 'Content-Type', :content => 'text/html;charst=utf-8'}
+  %body
+    %div.container
+      %h1 
+        %a{:href => '/'} pdxlocal
+      %h4 real time portland news & events chosen by you
+      = yield
+      <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <script type="text/javascript">
+      try {
+      var pageTracker = _gat._getTracker("UA-173596-12");
+      pageTracker._trackPageview();
+      } catch(err) {}</script>
+      <script type="text/javascript">
+      //<![CDATA[
+      (function() {
+      var links = document.getElementsByTagName('a');
+      var query = '?';
+      for(var i = 0; i < links.length; i++) {
+      if(links[i].href.indexOf('#disqus_thread') >= 0) {
+      query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+      }
+      }
+      document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/pdxlocal/get_num_replies.js' + query + '"></' + 'script>');
+      })();
+      //]]>
+      </script>
